@@ -1,6 +1,6 @@
 # Proyek-Akhir-SISTEM-MIKROKONTROLER
 <P>Source Code</P>
-<p>#define BLYNK_TEMPLATE_ID "TMPL67jGWndRb"
+#define BLYNK_TEMPLATE_ID "TMPL67jGWndRb"
 #define BLYNK_TEMPLATE_NAME "Smart Irrigation"
 #define BLYNK_AUTH_TOKEN "Ret4CBK9Zj8P-zuAeUwHkDrvtQ-sToEK"
 
@@ -164,4 +164,4 @@ void loop(){
   timer.run();
 
 }
-</P>
+
