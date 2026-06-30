@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "author": "Bangbang Ramadhan",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 9.6, "left": -33.56, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -183.7, "left": -19.4, "attrs": {} },
+    { "type": "wokwi-relay-module", "id": "relay1", "top": -172.6, "left": -163.2, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo1", "top": -194, "left": 115.2, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -80.4,
+      "left": -428.2,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 14.4,
+      "left": -422.95,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -80.4,
+      "left": -351.4,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 4.8,
+      "left": -355.75,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -90,
+      "left": -284.2,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 4.8,
+      "left": -288.55,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "pot1:VCC", "esp:3V3", "red", [ "v57.6", "h-87.2", "v86.4" ] ],
+    [ "pot1:GND", "esp:GND.2", "black", [ "v57.6", "h86.4", "v86.4" ] ],
+    [ "pot1:SIG", "esp:34", "green", [ "v76.8", "h-96.4", "v9.6" ] ],
+    [ "relay1:IN", "esp:26", "green", [ "h-9.6", "v239.8" ] ],
+    [ "relay1:GND", "esp:GND.1", "black", [ "h-38.4", "v230" ] ],
+    [ "relay1:VCC", "esp:5V", "red", [ "h-57.6", "v345.6" ] ],
+    [ "servo1:GND", "esp:GND.2", "black", [ "h-9.6", "v144" ] ],
+    [
+      "esp:5V",
+      "servo1:V+",
+      "red",
+      [ "h-57.45", "v86.4", "h316.8", "v-384", "h-163.2", "v-38.4" ]
+    ],
+    [ "servo1:PWM", "esp:25", "green", [ "h-28.8", "v105.8", "h-182.4", "v9.6" ] ],
+    [ "r1:1", "led1:A", "green", [ "h0" ] ],
+    [ "r1:2", "esp:18", "green", [ "h0", "v219.6", "h499.2", "v-153.6" ] ],
+    [ "led1:C", "esp:GND.1", "black", [ "v0" ] ],
+    [ "led2:A", "r2:1", "red", [ "v0" ] ],
+    [ "r2:2", "esp:19", "red", [ "h0", "v200.4", "h460.8", "v-134.4" ] ],
+    [ "esp:GND.1", "led2:C", "black", [ "h-316.65", "v-48" ] ],
+    [ "led3:A", "r3:1", "blue", [ "v0" ] ],
+    [ "r3:2", "esp:23", "blue", [ "h0", "v238.8", "h441.6", "v-211.2" ] ],
+    [ "esp:GND.1", "led3:C", "black", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
